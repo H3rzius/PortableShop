@@ -1,0 +1,6 @@
+name: PortableShop
+version: '${project.version}'
+main: me.h3rzius.portableshop.PortableShop
+api-version: 1.18
+authors: [ H3rzius ]
+description: Portable Shop, you can sell items via chat or sign to other players
