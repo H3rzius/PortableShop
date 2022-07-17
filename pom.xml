@@ -6,7 +6,7 @@
 
     <groupId>me.H3rzius</groupId>
     <artifactId>PortableShop</artifactId>
-    <version>1.0.0.2</version>
+    <version>1.0.1</version>
     <packaging>jar</packaging>
 
     <name>PortableShop</name>
