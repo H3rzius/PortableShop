@@ -11,6 +11,7 @@ public final class PortableShop extends JavaPlugin {
     public void onEnable() {
         // Plugin startup logic
         getCommand("portableshop").setExecutor(new MainCommand());
+
     }
 
     @Override
