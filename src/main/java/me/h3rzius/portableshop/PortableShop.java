@@ -17,9 +17,9 @@ public final class PortableShop extends JavaPlugin {
         // Plugin startup logic
         getCommand("portableshop").setExecutor(new MainCommand());
 
-        String dbUrl = "jdbc:mysql://localhost/pshop";
-        String dbName = "root";
-        String dbPassword = "";
+        String dbUrl = getConfig().getString("url");
+        String dbName = getConfig().getString("username");
+        String dbPassword = getConfig().getString("password");
 
         try {
             Connection connection = DriverManager.getConnection(dbUrl, dbName, dbPassword);
@@ -39,6 +39,11 @@ public final class PortableShop extends JavaPlugin {
     @Override
     public void onDisable() {
         // Plugin shutdown logic
+    }
+
+    public String getConfigStrings(String str) {
+        getConfig().getString(str);
+        return str;
     }
 
 }

@@ -7,3 +7,10 @@
 #
 #
 About: 'A portable shop by H3rzius'
+#
+#
+#
+url: 'jdbc:mysql://localhost/pshop'
+username: 'root'
+password: ''
+commandNotExistException: 'ERROR: This command doesnt exist!'
