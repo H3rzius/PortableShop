@@ -1,24 +1,19 @@
 package me.h3rzius.portableshop.commands;
 import me.h3rzius.portableshop.PortableShop;
-import me.h3rzius.portableshop.exceptions.PortableShopCommandNotExistException;
-import org.bukkit.ChatColor;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
-import org.bukkit.command.defaults.VersionCommand;
 import org.bukkit.entity.Player;
-import org.bukkit.plugin.java.JavaPlugin;
-
-import javax.sound.sampled.Port;
 
 public class MainCommand implements CommandExecutor {
     PortableShop pshop = new PortableShop();
-    private CreateCommand createCmd;
-    private RenameCommand renameCmd;
+    private CreateCommand createCmd = new CreateCommand();
+    private RenameCommand renameCmd = new RenameCommand();
+    private AddCommand addCmd = new AddCommand();
 
     @Override
     public boolean onCommand(CommandSender sender, Command command, String label, String[] args) {
-        PortableShopCommandNotExistException pscnee = new PortableShopCommandNotExistException();
+        //PortableShopCommandNotExistException pscnee = new PortableShopCommandNotExistException();
         if (sender instanceof Player) {
             Player p = (Player) sender;
             if (args.length == 0 ) {
@@ -28,21 +23,20 @@ public class MainCommand implements CommandExecutor {
                 switch (subCommand) {
                     case "about":
                         p.sendMessage(pshop.getConfigStrings("About"));
-                        /*
                     case "create":
-                        return false;
+                        createCmd.createShop(p);
                     case "rename":
-                        return false;
+                        renameCmd.renameShop(p);
                     case "add":
-                        return false;
+                        addCmd.addItem(p);
+                        /*
                     case "view":
                         return false;
                     case "page":
                         return false;
-
                          */
                     default:
-                        pscnee.printStackTrace();
+                        //pscnee.printStackTrace();
                 }
             }
 

@@ -1,12 +1,14 @@
 package me.h3rzius.portableshop.commands;
 
-public class CreateCommand extends MainCommand {
+import me.h3rzius.portableshop.PortableShop;
+import me.h3rzius.portableshop.listeners.CreateShopListener;
+import org.bukkit.entity.Player;
 
-    public CreateCommand() {
-        super();
-    }
+public class CreateCommand {
+    PortableShop portableShop = new PortableShop();
+    CreateShopListener csl = new CreateShopListener();
 
-    public void createShop() {
-
+    public void createShop(Player player) {
+        csl.isShopCreated();
     }
 }

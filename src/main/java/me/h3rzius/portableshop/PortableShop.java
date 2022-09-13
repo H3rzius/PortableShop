@@ -17,9 +17,9 @@ public final class PortableShop extends JavaPlugin {
         // Plugin startup logic
         getCommand("portableshop").setExecutor(new MainCommand());
 
-        String dbUrl = getConfig().getString("url");
-        String dbName = getConfig().getString("username");
-        String dbPassword = getConfig().getString("password");
+        String dbUrl = getConfigStrings("url");
+        String dbName = getConfigStrings("username");
+        String dbPassword = getConfigStrings("password");
 
         try {
             Connection connection = DriverManager.getConnection(dbUrl, dbName, dbPassword);
