@@ -6,5 +6,6 @@ public class CreateShopListener implements Listener {
 
     public boolean isShopCreated() {
         return false;
+
     }
 }
